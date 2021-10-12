@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+
+</body>
+<script>
+    const userInfo1 = {
+    firstName: 'Avi',
+    lastName: 'Flombaum',
+    companyName: 'Flatbook Labs',
+    jobTitle: 'Developer Apprentice',
+    friend1firstName: 'Nancy',
+    friend1lastName: 'Burgess',
+    friend1companyName: 'Flatbook Labs',
+    friend1jobTitle: 'Developer Apprentice',
+    friend2firstName: 'Corinna',
+    friend2lastName: 'Jackson',
+    friend2companyName: 'Flatbook Labs',
+    friend2jobTitle: 'Senior Developer',
+    project1title: 'Flatbook',
+    project1description: 'The premier Flatiron School-based social network in the world.',
+    project2title: 'Scuber',
+    project2description: 'A burgeoning startup helping busy parents transport their children to and from all of their activities on scooters.'
+};
+
+
+
+
+
+
+
+
+//acessObject(userInfo);
+
+const schoolName = {
+    student: {
+        name: "Sally",
+        age: 12,
+        city: 'Sydney'
+    },
+    student1: {
+        name: "Lisa",
+        age: 13,
+        city: 'Melbourne'
+    },
+    student2: {
+        name: "Sally",
+        age: 14,
+        city: 'Brisbane'
+    }
+}
+
+//acessObject(schoolName);
+
+function acessObject(arg) {
+    for (const key in arg) {
+        //console.log(arg[key]);
+    }
+}
+
+function deepIterator(target) {
+
+    
+
+    if (typeof target === 'object') {
+
+        console.log("OBJECT level");
+
+        for (const key in target) {
+
+            console.log("we are in loop");
+
+            deepIterator(target[key]);
+        }
+
+    } else {
+
+        console.log("we are in else");
+
+        console.log("Value == " + target);
+
+    }
+}
+
+const userInfo = {
+  firstName: 'Avi',
+  lastName: 'Flombaum',
+  company: {
+    name: 'Flatbook Labs',
+    jobTitle: 'Developer Apprentice'
+  },
+  friends: [{
+    firstName: 'Nancy',
+    lastName: 'Burgess',
+    company: {
+      name: 'Flatbook Labs',
+      jobTitle: 'Developer Apprentice'
+    }
+  },
+  {
+    firstName: 'Corinna',
+    lastName: 'Jackson',
+    company: {
+      name: 'Flatbook Labs',
+      jobTitle: 'Lead Developer'
+    }
+  }],
+  projects: [{
+    title: 'Flatbook',
+    description: 'The premier Flatiron School-based social network in the world.'
+  },
+  {
+    title: 'Scuber',
+    description: 'A burgeoning startup helping busy parents transport their children to and from all of their activities on scooters.'
+  }],
+  lastkey : "For test only"
+};
+
+
+const address = {
+    street1: '11 Broadway',
+    street2: '2nd Floor',
+    city: 'New York',
+    state: 'NY',
+    zipCode: "10004",
+    name: {
+        fName: "Kruti",
+        lName: "Patel",
+        company: "AcademyXi"
+    }
+};
+//deepIterator(address);
+
+deepIterator(userInfo);
+
+//acessObject(address);
+
+
+
+</script>
+
+</html>

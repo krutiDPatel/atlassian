@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Real Time Input</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 1.5em;
+        }
+
+        .container {
+            max-width: 468px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        main {
+            border: dotted 1px red
+        }
+
+        main label {
+            display: block;
+            margin: 0 0 5px 0;
+        }
+
+        main input {
+            width: 100%;
+            font-size: 1em;
+            font-family: serif;
+        }
+
+        header {
+            border: dotted 1px green;
+        }
+
+        main, header {
+            padding: 15px;
+            margin: 0 0 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="width: 500px;">
+        
+        <div style="width: 200px; float: left;">
+
+          <label for="js-text-value-f">First Name</label>
+          <input id="js-text-value-f" type="text" value=""/>
+
+          <label for="js-text-value-l">Last Name</label>
+          <input id="js-text-value-l" type="text" value=""/>
+
+        </div>
+
+        <div style="width: 200px; float: left;">
+            
+            First Name: <span id="js-text-block-f" data-text=""></span>
+            <br>
+            Last Name: <span id="js-text-block-l" data-text=""></span>
+
+        </div>
+
+        <div style="clear: both;"></div>
+
+      </div>
+
+</body>
+
+<script>
+   const jsTextBlockF = document.getElementById("js-text-block-f"),
+        jsTextInputF = document.getElementById("js-text-value-f");
+
+        if (jsTextInputF.value.length === 0) {
+            jsTextBlockF.innerHTML = " ";
+        }
+
+        jsTextInputF.addEventListener("input", () => {
+            jsTextBlockF.setAttribute("data-text", jsTextInputF.value);
+
+            jsTextBlockF.innerHTML = jsTextBlockF.getAttribute("data-text");
+
+            if (jsTextInputF.value.length === 0) {
+            jsTextBlockF.innerHTML = " ";
+            }
+        });
+
+        const jsTextBlockL = document.getElementById("js-text-block-l"),
+        jsTextInputL = document.getElementById("js-text-value-l");
+
+        if (jsTextInputL.value.length === 0) {
+            jsTextBlockL.innerHTML = " ";
+        }
+
+        jsTextInputL.addEventListener("input", () => {
+            jsTextBlockL.setAttribute("data-text", jsTextInputL.value);
+
+            jsTextBlockL.innerHTML = jsTextBlockL.getAttribute("data-text");
+
+            if (jsTextInputL.value.length === 0) {
+            jsTextBlockL.innerHTML = " ";
+            }
+        });
+
+</script>
+
+</html>

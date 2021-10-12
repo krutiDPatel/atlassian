@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .wrapper {
+        width: 1000px;
+        height: 650px;
+        margin: 0 auto;
+        border: 2px dashed black;
+    }
+    .leftCol {
+        float: left;
+        width: 50%;
+        height: 646px;
+        background-color: cornsilk;
+    }
+    .rightCol{
+        float: right;
+        width: 50%;
+        height: 646px;
+    }
+    .clear {
+        clear: both;
+    }
+    .buttonGroup {
+        padding: 20px;
+        width: 60%;
+        margin: 0 auto;
+    }
+    .pointer {
+        cursor: pointer;
+    }
+    .messageArea {
+        text-align: center;
+        margin: 50% 0;
+        font-size: 60px;
+        font-family: cursive;
+    }
+    #wholeName {
+        text-transform: capitalize;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="leftCol">
+            <div class="buttonGroup">
+                <button class="pointer" onclick="changeBackground('green')">Green</button>
+                <button class="pointer" onclick="changeBackground('red')">Red</button>
+                <button class="pointer" onclick="changeBackground('blue')">Blue</button>
+                <button class="pointer" onclick="changeBackground('black')">Black &#9924</button>
+            </div>
+            <div class="buttonGroup">
+                <button class="pointer" onclick="changeColor('white')">White</button>
+                <button class="pointer" onclick="changeColor('beige')">Beige</button>
+                <button class="pointer" onclick="changeColor('cornsilk')">Cornsilk</button>
+                <button class="pointer" onclick="changeColor('bisque')">Bisque</button>
+
+                <br><br><br>
+
+                <label>1<sup>st</sup>Name: </label>
+                <input type="text" id="firstName" onkeyup="getName()">
+
+                <br><br>
+
+                <label>2<sup>nd</sup>Name: </label>
+                <input type="text" id="secondName" onkeyup="getName()">
+
+            </div>
+            
+        </div>
+        <div class="rightCol" id="right-col">
+            <div class="messageArea" id="msg-area">
+                <span id="initial"></span>
+                <hr>
+                <span id="wholeName"></span>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+  
+</body>
+
+<script>
+
+    function getName() {
+        var nameStr = document.getElementById('firstName').value;
+        var nameStr2 = document.getElementById('secondName').value;
+        document.getElementById("wholeName").innerHTML = nameStr + " & " + nameStr2;
+        document.getElementById("initial").innerHTML = nameStr.substr(0,1).toUpperCase() + " & " + nameStr2.substr(0,1).toUpperCase();
+    }
+
+
+
+const elemID = document.getElementById('right-col');
+
+function changeBackground(color){
+    elemID.style.backgroundColor = color;
+}
+
+const elemIDFont = document.getElementById('msg-area');
+
+function changeColor(color){
+    elemID.style.color = color;
+}
+
+</script>
+
+</html>

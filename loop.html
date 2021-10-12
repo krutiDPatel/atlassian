@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<head>
+  <style>
+    .myDiv{
+      padding: 20px;
+      border: 2px solid blue;
+      border-radius: 6px;
+      background-color: cornsilk;
+    }
+    .style1{
+        font-family: cursive;
+        font-size: 18px;
+        color: red;
+    }
+
+    .style2{
+        font-family: Verdana;
+        font-size: 18px;
+        color: green;
+    }
+    .list-item li:nth-child(1){
+        color: blue;
+    }
+
+    .list-item li:nth-child(2){
+        color: red;
+    }
+
+    .list-item li:nth-child(3){
+        color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="parent" class="myDiv list-item">
+
+    <div id="child">
+
+      <p class="pTag" id="exEventListner">
+          This is my paragraph text.
+      </p>
+
+      <p class="pTag">
+        This is my paragraph text.
+      </p>
+
+      <p class="pTag">
+        This is my paragraph text.
+      </p>
+
+      <input type="text" max="20" min="2" id="inputTxt">
+    </div>
+
+    <br>
+    <button onclick="changeFontGlobaly('style1')">Style 1</button>
+
+    <br>
+    <button onclick="changeFontGlobaly('style2')">Style 2</button>
+
+    <br>
+    <br>
+  <ul id="listItems" class="list-item">
+    <li>List 1</li>
+    <li>List 2</li>
+    <li>List 3</li>
+  </ul>
+
+  <br>
+  <ul id="listItems2" class="list-item">
+    <li>List A</li>
+    <li>List B</li>
+    <li>List C</li>
+  </ul>
+  
+  <br>
+  <ol id="listItemsNum" class="list-item">
+    <li>List I</li>
+    <li>List II</li>
+    <li>List III</li>
+  </ol>
+
+  </div>
+
+</body>
+
+<script>
+
+  const elemID = document.getElementById('exEventListner');
+  elemID.addEventListener('click', function(){
+    alert("I have added Event Listner");
+  });
+
+  function changeFontGlobaly(style) {
+
+    if(style == 'style1') {
+      document.getElementById("child").className = "style1"
+    }
+
+    if(style == 'style2') {
+      document.getElementById("child").className = "style2";
+    }
+
+
+    
+
+  }
+
+const divArrayClsName = document.getElementsByClassName('myDiv');
+console.log(divArrayClsName);
+
+const paraArray = document.getElementsByTagName('p');
+console.log(paraArray);
+
+for (let i = 0; i < paraArray.length; i++) {
+  paraArray.item(i).className = "myParaStyleChange";
+}
+
+const paraArrayClsName = document.getElementsByClassName('myPara');
+console.log(paraArrayClsName);
+
+
+
+//I want to print 0 to 100 numbers.
+
+fetch('https://anapioficeandfire.com/api/books')
+  .then(resp => resp.json())
+  .then(json => console.log(json));
+
+
+setTimeout(() => console.log('Hello World!'), 2000)
+console.log("No, me first")
+
+const studentInfo= {
+  stuName : "Robyn",
+  courseDate: "12-Aug-2021",
+  paymentDetails: "CrediCard"
+}
+
+function calculator(a = 10,b = 10, opn){
+  if(opn == "*"){
+   console.log(`Mulitplication ${a*b}`);
+  }
+  if(opn == "+"){
+   console.log(`Addition ${a+b}`);
+  }
+  if(opn == "-"){
+   console.log(`Subtraction ${a-b}`);
+  }
+  if(opn == "/"){
+   let roundVal = Math.floor(a/b);
+   console.log(`Division ${roundVal}`);
+  }
+
+}
+
+//calculator(20,30,"*");
+//calculator(20,30,"+");
+//calculator(20,30,"-");
+//calculator(20,30,"/");
+
+function add(a,b) {
+  return a + b;
+}
+
+let result = add(10,10)
+console.log(result);
+
+let num = 17;
+let chars = "Hello";
+let CarNames = ["BMW","Jeep","Volvo","Mazda","Audi","Honda", "Ferrari","Bus", "Helicopter", 'Auto', "Bike", "Scooter"];
+
+const objectData = {
+  "acID": "12345",
+  "acNum": "AC1234",
+  "acName": "Aroonima",
+  "DOB": "10 Jan",
+  "authID": "Passport",
+  "city": "Melbourne",
+  "country" : "Australia"
+}
+
+console.log(`Account Name : ${objectData["acName"]}`);
+
+console.log(`Total Number of the Values of car Array : ${CarNames.length}`);
+
+for(let i=0; i < CarNames.length; i++) {
+  console.log(`CarName[${i}] : ${CarNames[i]}`);
+}
+
+console.log(`Revrese`);
+
+for(let i=CarNames.length-1; i >= 0; i--) {
+  console.log(`CarName[${i}] : ${CarNames[i]}`);
+}
+
+const englishMusicByCity = {
+  "manchester": [
+    {
+      "bandName": "The Smiths",
+      "memberNames": ["Morrissey", "Johnny", "Andy", "Mike"]
+    },
+    {
+      "bandName": "Joy Division",
+      "memberNames": ["Peter", "Stephen", "Bernard", "Ian"]
+    },
+    {
+      "bandName": "ABCs",
+      "memberNames": ["Morrissey", "Johnny", "Andy", "Mike"]
+    },
+    {
+      "bandName": "PQRs",
+      "memberNames": ["Peter", "Stephen", "Bernard", "Ian"]
+    },
+    {
+      "bandName": "XYZs",
+      "memberNames": ["Morrissey", "Johnny", "Andy", "Mike"]
+    },
+    {
+      "bandName": "Last",
+      "memberNames": ["Peter", "Stephen", "Bernard", "Ian"]
+    }
+  ]
+}
+
+
+//cards.splice(2, 1, 'Ace of Clubs');
+// => ["Nine of Clubs"]
+
+//cards;
+// => ["Ace of Spades", "Jack of Clubs", "Ace of Clubs", "Nine of Diamonds", "Three of Hearts"]
+
+
+
+
+//const objectName = { a: 1, b: 2, c: 3 };
+
+for (const i in objectName) {
+  console.log(`${i} --- ---  ${objectName[i]}`);
+}
+
+const myArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+
+const cards = ['Ace of Spades', 'Jack of Clubs', 'Nine of Clubs', 'Nine of Diamonds', 'Three of Hearts'];
+
+
+for (const i of cards) {
+  console.log(i);
+}
+
+for (const i of 'Helo, world!') {
+  console.log(i);
+}
+
+const objectName = { a: 1, b: 2, c: 3 };
+
+for (const i in objectName) {
+ console.log(`${i} --- ---  ${objectName.i}`);
+}
+
+
+
+
+
+
+
+const mondayMenu = {
+  cheesePlate: {
+    soft: 'Chèvre',
+    semiSoft: 'Gruyère',
+    hard: 'Manchego'
+  },
+  fries: 'Curly',
+  salad: 'Cobb'
+};
+
+mondayMenu.fries = 'Sweet potato';
+
+
+
+for (const keyMy in mondayMenu) {
+  //console.log(`${keyMy} === ${mondayMenu[keyMy]}`);
+}
+
+
+const userInfo = {
+  firstName: 'Avi',
+  lastName: 'Flombaum',
+  company: {
+    name: 'Flatbook Labs',
+    jobTitle: 'Developer Apprentice'
+  },
+  friends: [{
+    firstName: 'Nancy',
+    lastName: 'Burgess',
+    company: {
+      name: 'Flatbook Labs',
+      jobTitle: 'Developer Apprentice'
+    }
+  },
+  {
+    firstName: 'Corinna',
+    lastName: 'Jackson',
+    company: {
+      name: 'Flatbook Labs',
+      jobTitle: 'Lead Developer'
+    }
+  }],
+  projects: [{
+    title: 'Flatbook',
+    description: 'The premier Flatiron School-based social network in the world.'
+  },
+  {
+    title: 'Scuber',
+    description: 'A burgeoning startup helping busy parents transport their children to and from all of their activities on scooters.'
+  }],
+  lastkey : "For test only"
+};
+
+function shallowIterator(target) {
+  for (const key in target) {
+    console.log(`${key} === ${target[key]}`);
+  }
+}
+
+function deepIterator(target) {
+  if (typeof target === 'object') {
+    for (const key in target) {
+      deepIterator(target[key]);
+    }
+  } else {
+    console.log("Value == " + target);
+  }
+}
+
+function nestedLoop(obj) {
+    const res = {};
+
+    function recurse(obj, current) {
+
+        for (const key in obj) {
+
+            let value = obj[key];
+
+            if(value != undefined) {
+
+                if (value && typeof value === 'object') {
+
+                    recurse(value, key);
+
+                } else {
+
+                  	// Do your stuff here to var value
+                    res[key] = value;
+                    //console.log(`${key} --- ${res[key]}`);
+
+                }
+            }
+        }
+    }
+    recurse(obj);
+    return res;
+}
+
+nestedLoop(userInfo);
+
+function startClass() {
+  console.log("Launch Zoom");
+  setTimeout(()=>console.log("Please satrt the class"), 5000);
+}
+
+
+function Robyn() {
+  var studentOne = "Robyn";
+  console.log("Welcome Robyn");
+  console.log(studentOne);
+}
+
+function Aroonima() {
+  console.log("Welcome Aroonima");
+}
+
+function Andrew() {
+  console.log("Welcome Andrew");
+}
+
+function Chang() {
+  console.log("Welcome Chang");
+}
+
+
+
+startClass();
+Robyn();
+Aroonima();
+Andrew();
+Chang();
+
+
+
+</script>
+
+</html>
